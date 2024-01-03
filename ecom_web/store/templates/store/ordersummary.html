@@ -1,0 +1,134 @@
+{% extends "store/main.html"%}
+{% block content %}
+<html>
+    <head>
+        <style>
+                body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                }
+
+                .container {
+                display: flex;
+                max-width: 800px;
+                margin: 20px auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+
+                .address-details {
+                flex: 1;
+                }
+
+                .order-summary {
+                flex: 1;
+                margin-left: 20px;
+                }
+
+                h2 {
+                color: #333;
+                }
+
+                table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                }
+
+                th, td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                }
+
+                th {
+                background-color: #8bbbb5;
+                }
+
+                .total {
+                margin-top: 20px;
+                text-align: right;
+                font-weight: bold;
+                }
+                img {
+                max-width: 50px;
+                max-height: 50px;
+                }
+                .address-details {
+                flex: 1;
+                
+                }
+                .address-heading {
+                color: #151615;
+                }
+
+                .address {
+                margin-top: 10px;
+                background-color: #ddd;
+                }
+
+                .name, .street, .city {
+                margin: 5px 0;
+                }
+
+
+
+
+        </style>
+    </head>
+</html>
+
+    <div class="container">
+        <div class="address-details">
+            <h2 class="address-heading">Address Details</h2>
+            <div class="address">
+                <h3>Shipping to: </h3>
+            </div>
+            <div class="address">
+                <p class="name">{{info.username}}</p>
+            </div>
+            <div class="address">
+              <p class="street">{{info.address}}</p>
+              <p class="city">{{info.city}}, {{info.state}}</p>
+              <p>{{info.zipcode}}</p>
+            </div>
+        </div>
+    
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+    
+          <table>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+            <!-- Add rows dynamically based on order data -->
+            {% for i,j in my_zip %}
+            <tr>
+              <td ><img src="{{ j.img }}" alt="Item 1"></td>
+              <td >{{ i.product }}</td>
+              <td >Rs {{j.prod_price}} x {{i.quantity}}</td>
+            </tr>
+            {% endfor %}
+            <!-- Add more rows as needed -->
+          </table>
+    
+          <div class="total">
+            <p>Items: {{items}}</p>
+            <p>Total: Rs {{price}}</p>
+          </div>
+          {% if items == 0 %}
+          <a href="#" class="btn"><button>Place Order</button></a>
+          <p>No order to place</p>
+          {% else %}
+          <a href="{% url 'send-page' %}" class="btn"><button>Place Order</button></a>
+          {% endif %}
+          
+        </div>
+      </div>
+{% endblock content %}

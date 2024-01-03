@@ -1,0 +1,16 @@
+{% extends "store/main.html"%}
+{% block content %}
+    <div class="prduct-list">
+        <h2 >Product List</h2>
+    </div>
+    {% for i in members %}
+    <div class="product-list">
+        <div class="product">
+            <img src="{{ i.image.url }}">
+            <h3>{{ i.name }}</h3>
+            <p>Rs. {{ i.price }}</p>
+            <button data-product={{i.id}} data-action="add" class="update-cart">Add to Cart</button>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock content %}

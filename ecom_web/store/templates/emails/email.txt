@@ -1,0 +1,12 @@
+Hi, {{user}} orders details are as follow,
+Address Details:
+{{info.username}}
+{{info.address}}
+{{info.city}}, {{info.state}}
+{{info.zipcode}}
+Order Summary:
+Product
+quantity
+{% for i,j in my_zip %}{{ i.product }} {{i.quantity}}</td>{% endfor %}
+Total Items: {{items}}
+Total Amount: Rs {{price}}

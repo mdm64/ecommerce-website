@@ -1,0 +1,28 @@
+<p>Hi, {{user}} orders details are as follow,</p>
+<h2>Address Details:</h2>
+<p>{{info.username}}</p>
+<p>{{info.address}}</p>
+<p>{{info.city}}, {{info.state}}</p>
+<p>{{info.zipcode}}</p>
+
+    <div>
+      <h2>Order Summary</h2>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+        </tr>
+        <!-- Add rows dynamically based on order data -->
+        {% for i,j in my_zip %}
+        <tr>
+          <td >{{ i.product }}</td>
+          <td >{{i.quantity}}</td>
+        </tr>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+      </table>
+      <div >
+        <p>Total Items: {{items}}</p>
+        <p>Total Amount: Rs {{price}}</p>
+      </div>
+    </div>

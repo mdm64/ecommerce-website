@@ -1,0 +1,99 @@
+{% extends "store/main.html"%}
+
+{% block content %}
+<html>
+<head>
+<style>
+/* table{
+  border: 1px solid rgb(102, 99, 99);
+  background-color: #9cdbd4;
+}
+th, td {
+  border: 1px solid rgb(102, 99, 99);
+  background-color: #52978f;
+}
+table {
+  border-spacing: 30px;
+} */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    background-color: #8bbbb5;
+    
+}
+
+th {
+    background-color: #52978f;
+}
+img {
+    max-width: 50px;
+    max-height: 50px;
+}
+.cartbtn {
+        max-height: 35px;
+        max-width: 35px;
+        cursor: pointer;
+        padding: 10px;
+}
+
+
+</style>
+</head>
+    <div class="shp">
+        <h2>Shopping Cart</h2>
+    </div>
+    <div>
+        <table style="width:100%">
+            <thread>
+                <tr>
+                    <th><b>Items: {{items}}</b></th>
+                    <th><b>Total: Rs {{price}}</b></th>
+                    {% if items == 0 %}
+                    <th>
+                        <a href="#"><button>Checkout</button></a>
+                        <p>Cart is empty</p>
+                    </th>
+                    {% else %}
+                    <th><a href="{% url 'checkout-page'%}"><button>Checkout</button></a></th>
+                    {% endif %}
+                </tr>
+            </thread>
+        </table>
+    </div>
+
+    <div>
+        <table style="width:100%" class="shopping-cart">
+            <thread>
+                <tr>
+                    <th class="item-image"></th>
+                    <th class="item-price">Item</th>
+                    <th class="item-price">Price (in Rs)</th>
+                    <th class="quantity">Quantity</th>
+                    <th class="total">Total</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for i,j in my_zip %}
+                <tr>
+                    <td class="item-image"><img src="{{ j.img }}" alt="Item 1"></td>
+                    <td class="item-price">{{ i.product }}</td>
+                    <td class="item-price">{{j.prod_price}}</td>
+                    <td class="quantity">
+                        <button data-product={{j.id}} data-action="remove" class="update-cart cartbtn">-</button>
+                        {{i.quantity}}
+                        <button  data-product={{j.id}} data-action="add" class="update-cart cartbtn">+</button>
+                    </td>
+                    <td class="total">{{j.total}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

@@ -1,0 +1,120 @@
+/* Add some basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the navigation bar */
+nav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px; /* Align children at each end of the flex container */
+}
+
+/* Style the left-aligned links */
+.left-links a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block;
+}
+
+.left-links a:hover {
+    background-color: #ddd;
+    color: black;
+    
+}
+
+/* Style the right-aligned links */
+.right-links a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block;
+}
+
+.right-links a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.right-links img {
+    height: 16px; /* Adjust the height of the phone icon */
+    width: auto;
+    vertical-align: middle;
+}
+/* Style the content area */
+.content {
+    padding: 10px;
+}
+
+/*  */
+/* Basic Reset */
+body, h1, h2, p, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background: #d1dbda; */
+}
+
+/* Product List Styles */
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 10px;
+    
+}
+
+.product {
+    max-width: 300px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    background-color: #b5d1ce;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.price {
+    color: #2ec5b6;
+    font-weight: bold;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #00796b;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.shp {
+    background-color: aliceblue;
+    text-align: center;
+}
+
+
+

@@ -1,0 +1,14 @@
+{% extends "store/main.html"%}
+{% block content %}
+<div class="content-section">
+    <div>
+        <p>You are logged out!</p>
+    </div>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a class="ml-2" href="{% url 'login-page'%}">Login again</a>
+        </small>
+    </div>
+
+</div>
+{% endblock content %}
